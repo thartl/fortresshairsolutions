@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Core functionality plugin for Ollie Starter.
+ * Core functionality plugin for ForTRESS Hair Solutions.
  *
  * @package     Osim\CoreFunctionality
  * @author      Tomas Hartl
  * @license     GNU General Public License 2.0+
  *
  * @wordpress-plugin
- * Plugin Name: Ollie Starter Core Functionality
+ * Plugin Name: ForTRESS Hair Solutions Core Functionality
  * Description: This contains your site's core functionality so that it is theme-independent. <strong>It should always be activated</strong>.
  * Version:     1.0.2
  * Author:      Tomas Hartl

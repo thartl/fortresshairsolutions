@@ -1,7 +1,7 @@
 {
 	"name": "osim-native-blocks",
 	"version": "0.1.1",
-	"description": "Custom editor blocks for Ollie Starter",
+	"description": "Custom editor blocks for ForTRESS Hair Solutions",
 	"author": "Tomas Hartl",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",

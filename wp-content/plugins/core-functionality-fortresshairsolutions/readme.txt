@@ -1,4 +1,4 @@
-=== Ollie Starter Core Functionality ===
+=== ForTRESS Hair Solutions Core Functionality ===
 Requires at least: 6.9
 Tested up to: 6.9
 Requires PHP: 8.2
