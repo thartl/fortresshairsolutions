@@ -1,0 +1,105 @@
+.osim-tab-wrapper {
+
+	.osim-tabs-nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		.osim-tab-item {
+
+			.osim-tab-link {
+				font-size: 14px;
+				line-height: 20px;
+				padding: 12px;
+				border-radius: 4px;
+				margin-right: 10px;
+				border: 1px solid var(--osim-tabs-border, #cfc8d8);
+				background-color: var(--osim-tabs-tab-bg, inherit);
+				color: var(--osim-tabs-tab-color, inherit);
+				font-weight: var(--osim-tabs-tab-weight, inherit);
+				box-shadow: none;
+
+				&:not(.is-active):hover {
+					background-color: var(--osim-tabs-tab-bg-hover, var(--osim-tabs-tab-bg, inherit));
+				}
+
+				&.is-active {
+					background-color: var(--osim-tabs-tab-active-bg, var(--osim-tabs-tab-bg, inherit));
+					color: var(--osim-tabs-tab-active-color, var(--osim-tabs-tab-color, inherit));
+					font-weight: var(--osim-tabs-tab-active-weight, var(--osim-tabs-tab-weight, inherit));
+					border-color: var(--osim-tabs-border, #cfc8d8);
+				}
+			}
+
+			&:not(:last-child) .osim-tab-link {
+				border-right-width: 1px;
+			}
+		}
+
+		button.osim-add-tab {
+			margin-left: 2rem;
+			padding: 6px 12px 6px 8px;
+		}
+	}
+}
+
+.osim-tab-panel {
+	padding-top: 16px;
+}
+
+/* Sidebar ─────────────────────────────────────────────────────────── */
+.osim-tabs__sidebar-list {
+	/* two columns shared by every row
+	   ─ column 1: grow only to the *widest* title   (max-content)
+	   ─ column 2: auto-size to the icon button      (auto)          */
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	column-gap: 6px;
+	row-gap: 6px;
+	max-width: 100%;
+	margin: 0 0 8px;
+	padding-left: 0;
+	list-style: none;
+
+	/* Flatten each <li> so its children participate directly in the grid */
+	.osim-tabs__sidebar-item {
+		display: contents;
+	}
+
+	.components-button {
+
+		/* Title pill (grid column 1) */
+		&.osim-tabs__title-btn {
+			justify-content: left;
+			pointer-events: none;
+			cursor: default;
+			height: auto;
+			padding: 4px 8px;
+			color: #1e1e1e;
+			font-size: 13px;
+			line-height: 20px;
+			white-space: normal;  // wrap if needed
+			word-break: break-word;
+			text-align: left;
+
+			&:disabled {
+				box-shadow: inset 0 0 0 1px #888;
+			}
+		}
+
+		&.osim-tabs__reorder-btn {
+			min-width: unset;
+		}
+
+		/* Trash icon (grid column 4) */
+		&.osim-tabs__delete-btn {
+			height: 36px;
+			width: 36px;
+
+			span.dashicons-trash::before {
+				font-size: 18px;
+			}
+		}
+	}
+
+}

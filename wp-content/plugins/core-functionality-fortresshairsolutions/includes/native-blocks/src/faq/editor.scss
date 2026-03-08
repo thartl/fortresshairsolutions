@@ -1,0 +1,14 @@
+.wp-block-osim-faq {
+
+	.faq-content {
+		margin: 0;
+
+		p {
+			margin-top: 0;
+
+			&:last-child {
+				margin-bottom: 6px;
+			}
+		}
+	}
+}

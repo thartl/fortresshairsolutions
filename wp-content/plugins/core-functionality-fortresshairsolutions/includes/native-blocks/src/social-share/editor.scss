@@ -1,0 +1,18 @@
+.wp-block-pwire-social-share {
+	min-height: 2.5rem;
+}
+
+.editor-styles-wrapper .wp-block-pwire-social-share.wp-block-social-links.is-layout-flex {
+	align-items: center;
+}
+
+.editor-styles-wrapper .wp-block-pwire-social-share .wp-social-link .wp-block-social-link-anchor {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
+}
+
+.editor-styles-wrapper .wp-block-pwire-social-share .wp-social-link svg {
+	display: block;
+}

@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "osim/tab",
+	"version": "0.1.2",
+	"title": "Tab",
+	"category": "design",
+	"description": "Tab for the Tabs block.",
+	"textdomain": "osim-blocks",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"parent": [
+		"osim/tabs"
+	],
+	"attributes": {
+		"activeTab": {
+			"type": "string"
+		},
+		"uid": {
+			"type": "string"
+		},
+		"lock": {
+			"type": "object",
+			"default": {
+				"move": true,
+				"remove": true
+			}
+		}
+	},
+	"editorScript": "file:./index.js"
+}

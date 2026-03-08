@@ -1,0 +1,18 @@
+{
+	"name": "custom-ollie-starter",
+	"version": "1.1.0",
+	"scripts": {
+		"watch:css": "sass --watch --update --source-map --style=expanded assets/scss:assets/css assets/ollie-block-style-overrides:assets/styles",
+		"watch:js": "esbuild assets/js/src/*.js --bundle --format=iife --outdir=assets/js/dist --entry-names=[name].min --watch",
+		"watch": "concurrently \"npm run watch:css\" \"npm run watch:js\"",
+		"build:js": "esbuild assets/js/src/*.js --bundle --format=iife --minify --outdir=assets/js/dist --entry-names=[name].min",
+		"build-with-maps": "sass --source-map --style=compressed assets/scss:assets/css assets/ollie-block-style-overrides:assets/styles && npm run build:js",
+		"build": "sass --no-source-map --style=compressed assets/scss:assets/css assets/ollie-block-style-overrides:assets/styles && rm -f assets/css/*.map assets/styles/*.map && npm run build:js",
+		"build-ollie-block-style-overrides": "sass --no-source-map --style=compressed assets/ollie-block-style-overrides:assets/styles"
+	},
+	"devDependencies": {
+		"concurrently": "^9.2.1",
+		"esbuild": "^0.27.3",
+		"sass": "^1.97.3"
+	}
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "osim/faqs",
+  "version": "1.0.6",
+  "title": "FAQs",
+  "category": "design",
+  "icon": "editor-help",
+  "description": "Displays Frequently asked questions.",
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "allowedBlocks": [
+    "osim/faq"
+  ],
+  "textdomain": "osim-blocks",
+  "attributes": {
+    "makeCollapsible": {
+      "type": "boolean",
+      "default": false
+    },
+    "headingTextColor": {
+      "type": "string"
+    },
+    "headingBackgroundColor": {
+      "type": "string"
+    },
+    "contentTextColor": {
+      "type": "string"
+    },
+    "contentBackgroundColor": {
+      "type": "string"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js",
+    "faq-view"
+  ],
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css"
+}

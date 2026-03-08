@@ -1,0 +1,27 @@
+@use "sass:map";
+
+$breakpoints: (
+        xs: 480px,
+        sm: 640px,
+        md: 782px,
+        lg: 960px,
+        xl: 1200px
+);
+
+// Usage:
+// @use "../modules/breakpoints" as media_size;
+// @media (min-width: media_size.at_least(md))  { /* >= 782px */ }
+// @media (max-width: media_size.below(md))     { /* < 782px */ }
+
+@function at_least($name) {
+  @if map.has-key($breakpoints, $name) {
+    @return map.get($breakpoints, $name);
+  }
+  @error "Unknown breakpoint `#{$name}`. Available: #{map.keys($breakpoints)}";
+}
+
+$bp_epsilon: 0.02px;
+
+@function below($name) {
+  @return at_least($name) - $bp_epsilon;
+}

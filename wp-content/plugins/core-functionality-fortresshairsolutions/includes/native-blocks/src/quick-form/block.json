@@ -1,0 +1,114 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pwire/quick-form",
+	"version": "0.2.2",
+	"title": "Quick Form",
+	"category": "widgets",
+	"icon": "feedback",
+	"description": "A minimal, performance-first contact form with entry storage and email notifications.",
+	"keywords": [
+		"contact",
+		"form",
+		"lead",
+		"quick"
+	],
+	"textdomain": "pwire",
+	"attributes": {
+		"uid": {
+			"type": "string",
+			"default": ""
+		},
+		"ackVersion": {
+			"type": "string",
+			"default": ""
+		},
+		"fields": {
+			"type": "object",
+			"default": {}
+		},
+		"submitLabel": {
+			"type": "string",
+			"default": "Send"
+		},
+		"confirmationMessage": {
+			"type": "string",
+			"default": "Thank you! We’ll be in touch soon."
+		},
+		"submitTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"submitBgColor": {
+			"type": "string",
+			"default": ""
+		},
+		"submitBgHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"fieldGap": {
+			"type": "number",
+			"default": 20
+		},
+		"labelColor": {
+			"type": "string",
+			"default": ""
+		},
+		"fieldBgColor": {
+			"type": "string",
+			"default": ""
+		},
+		"fieldBorderColor": {
+			"type": "string",
+			"default": "#9797b6"
+		},
+		"fieldBorderWidth": {
+			"type": "number",
+			"default": 1
+		},
+		"fieldBorderRadius": {
+			"type": "number",
+			"default": 3
+		},
+		"labelFontSize": {
+			"type": "number",
+			"default": 1
+		},
+		"notificationEmails": {
+			"type": "string",
+			"default": ""
+		},
+		"successQueryArg": {
+			"type": "string",
+			"default": "pwire_quick_form"
+		},
+		"successQueryValue": {
+			"type": "string",
+			"default": "success"
+		}
+	},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"border": {
+			"radius": true
+		},
+		"typography": {
+			"fontSize": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

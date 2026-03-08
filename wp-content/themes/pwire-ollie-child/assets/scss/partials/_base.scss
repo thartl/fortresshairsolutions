@@ -1,0 +1,66 @@
+@use "../modules/breakpoints" as media_size;
+
+/* Smooth scroll to anchors
+--------------------------------------------- */
+:root {
+  // Base: phones and tablets
+  --site-header-offset: 22px;
+
+  // Above tablet width
+  @media screen and (min-width: media_size.at_least(md)) {
+    --site-header-offset: 25px;
+  }
+
+  // Small phones
+  @media screen and (max-width: media_size.below(xs)) {
+    --site-header-offset: 15px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+[id] {
+  scroll-margin-top: var(--site-header-offset);
+}
+
+/* Typography
+--------------------------------------------- */
+a,
+button {
+  text-underline-position: under;
+}
+
+a {
+  transition: color var(--hover-transition-duration, .2s) var(--hover-transition-timing, ease);
+}
+
+
+/* Header
+--------------------------------------------- */
+.site-header {
+  .wp-block-site-logo {
+    img {
+      width: clamp(8rem, 15vw, 12rem);
+    }
+  }
+}
+
+/* Navigation
+--------------------------------------------- */
+/* Extend Ollie temporary fix for text-decoration-thickness in Firefox */
+@-moz-document url-prefix() {
+  a,
+  button {
+    text-decoration-thickness: .1rem !important;
+  }
+}
+
+.wp-block-ollie-mega-menu button:hover {
+  text-decoration: underline;
+}

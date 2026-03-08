@@ -1,0 +1,322 @@
+/* Help docs
+---------------------------------------------------------------------------- */
+body.dashboard_page_help-docs {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	background-color: #f0f0f1;
+}
+body.dashboard_page_help-docs #wpbody-content > h1 {
+	font-size: 21px;
+}
+body.dashboard_page_help-docs .help-doc > h2 {
+	font-size: 26px;
+}
+
+
+.dashboard_page_help-docs #wpcontent {
+	padding: 20px;
+}
+
+#pw-help-docs {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 25px;
+	margin-top: 30px;
+}
+#pw-help-docs * {
+	box-sizing: border-box;
+}
+
+#pw-help-docs main {
+	position: relative;
+}
+
+#pw-help-docs main,
+#pw-help-docs aside {
+	background-color: #fefefe;
+	width: 100%;
+	min-height: 240px;
+	padding: 35px 25px;
+}
+
+#pw-help-docs aside {
+	font-size: 17px;
+	margin-bottom: 25px;
+}
+
+aside.help-docs-listings .listing {
+	margin-bottom: 10px;
+}
+aside.help-docs-listings .listing.child {
+	margin-left: 21px;
+}
+aside.help-docs-listings .listing.child + .top_level {
+	margin-top: 20px;
+}
+
+aside.help-docs-listings .listing a {
+	line-height: 1.35;
+	text-decoration: none;
+}
+
+main * {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+#pw-help-docs main .content > h2,
+#pw-help-docs main .content > h2 a,
+#pw-help-docs main .content > h3,
+#pw-help-docs main .content > h3 a {
+	color: #1d2327;
+	font-size: 23px;
+	line-height: 1.2;
+	margin: 35px 0 18px;
+}
+#pw-help-docs main .content > h2 a,
+#pw-help-docs main .content > h3 a {
+	margin: 0;
+}
+#pw-help-docs main .content > h2 + h3 {
+	margin-top: 0;
+}
+#pw-help-docs main .content > h3,
+#pw-help-docs main .content > h3 a {
+	font-size: 20px;
+}
+#pw-help-docs main .content > h2 a,
+#pw-help-docs main .content > h3 a {
+	text-decoration: underline;
+	text-underline-position: under;
+	-webkit-text-decoration-style: dotted;
+	text-underline-style: dotted;
+	transition: color 0.25s ease-in-out;
+}
+#pw-help-docs main .content > h2 a:hover,
+#pw-help-docs main .content > h2 a:active,
+#pw-help-docs main .content > h3 a:hover,
+#pw-help-docs main .content > h3 a:active {
+	color: #0da5d5;
+}
+
+#pw-help-docs main .wp-block-table {
+	margin-bottom: 40px;
+}
+
+@media screen and (min-width: 1360px) {
+
+	#pw-help-docs {
+		flex-direction: row;
+	}
+	#pw-help-docs main {
+		width: calc(100% - 375px);
+	}
+	#pw-help-docs aside {
+		width: 350px;
+		margin-bottom: 0;
+	}
+}
+
+#pw-help-docs main figure,
+#pw-help-docs main figure img {
+	max-width: 100%;
+	height: auto;
+	margin: 0;
+}
+
+#pw-help-docs main figure > a > img {
+	transition: transform 0.25s ease-in-out;
+	transform-origin: center;
+}
+#pw-help-docs main figure > a:hover > img,
+#pw-help-docs main figure > a:active > img {
+	transform: scale(1.01);
+}
+
+#pw-help-docs main ul {
+	margin-bottom: 30px;
+	padding-left: 32px;
+}
+#pw-help-docs main ul li {
+	list-style-type: disc;
+	margin-bottom: 12px;
+}
+
+#pw-help-docs .margin-bottom-20 {
+	margin-bottom: 20px;
+}
+
+#pw-help-docs .screencap-highlight {
+	padding: 20px;
+	border: 3px solid #0da5d540;
+	border-radius: 20px;
+}
+
+/** Loading indicator */
+#pw-help-docs .loading-indicator {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.4);
+	z-index: -20;
+	opacity: 1;
+	transition: opacity 0.1s ease;
+}
+#pw-help-docs .loading-indicator.hidden {
+	opacity: 0;
+	transition: opacity 0.14s ease;
+}
+#pw-help-docs .loading-indicator .inner {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100vh;
+	max-height: 340px;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+}
+#pw-help-docs .loading-indicator .inner .lds-ellipsis {
+	display: inline-block;
+	position: static;
+	transform: translate(-40px, -40px);
+}
+
+.lds-ellipsis div {
+	position: absolute;
+	top: 33px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #fff;
+	-webkit-animation-timing-function: cubic-bezier(0,1,1,0);
+	animation-timing-function: cubic-bezier(0,1,1,0);
+}
+.lds-ellipsis div:first-child {
+	left: 8px;
+	-webkit-animation: lds-ellipsis1 .6s infinite;
+	animation: lds-ellipsis1 .6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+	left: 8px;
+}
+.lds-ellipsis div:nth-child(2), .lds-ellipsis div:nth-child(3) {
+	-webkit-animation: lds-ellipsis2 .6s infinite;
+	animation: lds-ellipsis2 .6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+	left: 32px;
+}
+.lds-ellipsis div:nth-child(4) {
+	left: 56px;
+	-webkit-animation: lds-ellipsis3 .6s infinite;
+	animation: lds-ellipsis3 .6s infinite;
+}
+
+@-webkit-keyframes lds-ellipsis1 {
+	0% {
+		-webkit-transform: scale(0);
+		transform:scale(0)
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		transform:scale(1)
+	}
+}
+
+@keyframes lds-ellipsis1 {
+	0% {
+		-webkit-transform: scale(0);
+		transform:scale(0)
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		transform:scale(1)
+	}
+}
+
+@-webkit-keyframes lds-ellipsis3 {
+	0% {
+		-webkit-transform: scale(1);
+		transform:scale(1)
+	}
+
+	to {
+		-webkit-transform: scale(0);
+		transform:scale(0)
+	}
+}
+
+@keyframes lds-ellipsis3 {
+	0% {
+		-webkit-transform: scale(1);
+		transform:scale(1)
+	}
+
+	to {
+		-webkit-transform: scale(0);
+		transform:scale(0)
+	}
+}
+
+@-webkit-keyframes lds-ellipsis2 {
+	0% {
+		-webkit-transform: translate(0);
+		transform:translate(0)
+	}
+
+	to {
+		-webkit-transform: translate(24px);
+		transform:translate(24px)
+	}
+}
+
+@keyframes lds-ellipsis2 {
+	0% {
+		-webkit-transform: translate(0);
+		transform:translate(0)
+	}
+
+	to {
+		-webkit-transform: translate(24px);
+		transform:translate(24px)
+	}
+}
+
+/** Columns */
+@media screen and (min-width: 1360px) {
+
+	.left-narrow.gb-2-col-wideright .gb-layout-column-wrap {
+		display: flex;
+		gap: 25px;
+	}
+	.left-narrow.gb-2-col-wideright .gb-layout-column-wrap .gb-block-layout-column:nth-of-type(1) {
+		width: 120px;
+	}
+	.left-narrow.gb-2-col-wideright .gb-layout-column-wrap .gb-block-layout-column:nth-of-type(2) {
+		width: calc(100% - 120px - 25px);
+	}
+}
+
+/** Image */
+#pw-help-docs section.content > figure.wp-block-image.size-full {
+	padding: 20px;
+	border: 2px solid #7aace3;
+	border-radius: 12px;
+	margin: 20px 0 70px;
+}
+
+/** Help Docs - Lightbox */
+body.dashboard_page_help-docs .image-zoom-wrapper::after {
+	z-index: 999998;
+}
+body.dashboard_page_help-docs .image-zoom-zoomed {
+	z-index: 999999;
+}

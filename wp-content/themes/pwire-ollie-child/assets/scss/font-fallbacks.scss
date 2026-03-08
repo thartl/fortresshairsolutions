@@ -1,0 +1,22 @@
+/* Adjusted system fallbacks for Open Sans and Playfair Display (macOS-derived metrics) */
+@font-face {
+  font-family: "Open Sans Fallback";
+  src: local("Arial"), local("ArialMT");
+  font-style: normal;
+  font-weight: 400;
+  size-adjust: 103.2%;
+  ascent-override: 106.88%;
+  descent-override: 29.3%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Playfair Display Fallback";
+  src: local("Georgia");
+  font-style: normal;
+  font-weight: 400;
+  size-adjust: 106.76%;
+  ascent-override: 108.2%;
+  descent-override: 25.1%;
+  line-gap-override: 0%;
+}

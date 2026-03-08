@@ -1,0 +1,28 @@
+/*
+ * Admin bar - Help Docs
+ */
+#wpadminbar ul#wp-admin-bar-root-default #wp-admin-bar-pw_help_docs {
+	background-color: #0da5d5;
+	color: #fff;
+	margin: 0 9px;
+}
+#wpadminbar:not(.mobile) .ab-top-menu > li#wp-admin-bar-pw_help_docs:hover > a.ab-item {
+	background-color: #0481a2;
+	color: #fff;
+}
+
+
+/*
+ * Admin menu
+ */
+#adminmenu .menu-icon-page a,
+#adminmenu .menu-icon-page .wp-submenu li.current a,
+#adminmenu .menu-icon-page a .wp-menu-image:before,
+#adminmenu .menu-icon-pwire_qform_entry a {
+	color: #55c5e8;
+}
+#adminmenu .menu-icon-pwire_qform_entry a,
+#adminmenu .menu-icon-pwire_qform_entry .wp-submenu li.current a,
+#adminmenu .menu-icon-pwire_qform_entry a .wp-menu-image:before {
+	color: #53dd53;
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "osim/tabs",
+  "version": "0.1.7",
+  "title": "Simple Tabs",
+  "category": "design",
+  "description": "Lays out content in tabs.",
+  "textdomain": "osim-blocks",
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "allowedBlocks": [
+    "osim/tab"
+  ],
+  "attributes": {
+    "tabs": {
+      "type": "array",
+      "default": []
+    },
+    "activeTab": {
+      "type": "string"
+    },
+    "tabBackgroundColor": {
+      "type": "string"
+    },
+    "tabTextColor": {
+      "type": "string"
+    },
+    "tabFontWeight": {
+      "type": "string"
+    },
+    "contentBackgroundColor": {
+      "type": "string"
+    },
+    "contentTextColor": {
+      "type": "string"
+    },
+    "tabActiveBackgroundColor": {
+      "type": "string"
+    },
+    "tabActiveTextColor": {
+      "type": "string"
+    },
+    "tabActiveFontWeight": {
+      "type": "string"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,77 @@
+div.wp-block-osim-faq {
+	border-radius: 6px;
+	margin-bottom: 24px;
+	overflow: hidden;
+
+	.faq-heading {
+		color: var(--osim-faqs-heading-color, var(--wp--preset--color--base, #fff));
+		font-size: 1.125rem;
+		line-height: var(--wp--custom--line-height--small, 1.2);
+		font-weight: 400;
+		background-color: var(--osim-faqs-heading-bg, var(--wp--preset--color--main, #333));
+		padding: 16px 20px;
+		margin: 0;
+	}
+
+	div.faq-content.wp-block-group {
+		background-color: var(--osim-faqs-content-bg, var(--wp--preset--color--base, #fff));
+		color: var(--osim-faqs-content-color, inherit);
+		padding: 24px 20px;
+		margin: 0;
+
+		p {
+			font-size: 1.0625rem;
+			line-height: 1.45;
+			margin-bottom: 12px;
+
+			&:last-child {
+				margin-bottom: 6px;
+			}
+		}
+	}
+}
+
+.wp-block-osim-faqs.collapsible .wp-block-osim-faq {
+
+	.faq-heading {
+		position: relative;
+		padding: 16px 48px 16px 20px;
+		margin: 0;
+		cursor: pointer;
+		--osimpw-chevron-svg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 32"><path d="M55.898 0.020c-0.732 0.020-1.388 0.331-1.859 0.821l-0.001 0.001-24.719 24.719-24.719-24.721c-0.487-0.525-1.181-0.852-1.951-0.852-1.469 0-2.66 1.191-2.66 2.66 0 0.772 0.328 1.466 0.853 1.952l0.002 0.002 26.594 26.606c0.481 0.482 1.146 0.78 1.881 0.78s1.4-0.298 1.881-0.78l26.6-26.606c0.503-0.485 0.816-1.165 0.816-1.918 0-1.471-1.193-2.664-2.664-2.664-0.019 0-0.038 0-0.057 0.001l0.003-0z"></path></svg>');
+
+		&::after {
+			content: '';
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 1rem;
+			width: 16px;
+			height: 100%;
+			color: currentColor;
+			background-color: currentColor;
+			-webkit-mask: var(--osimpw-chevron-svg) no-repeat 50% 50%;
+			mask: var(--osimpw-chevron-svg) no-repeat 50% 50%;
+			-webkit-mask-size: 16px;
+			mask-size: 16px;
+			transform-origin: 50% 50%;
+			transform: rotate(180deg);
+			transition: transform 0.3s ease;
+		}
+	}
+
+	.faq-content {
+		overflow: hidden;
+	}
+
+	&.collapsed .faq-heading::after {
+		transform: rotate(0deg);
+	}
+
+	&.collapsed .faq-content {
+		display: none;
+	}
+}

@@ -1,0 +1,114 @@
+.osim-tab-wrapper {
+	--osim-tabs-border: #cfc8d8;
+	--osim-tabs-tab-bg: inherit;
+	--osim-tabs-tab-bg-hover: inherit;
+	--osim-tabs-tab-color: inherit;
+	--osim-tabs-tab-active-bg: inherit;
+	--osim-tabs-tab-active-color: inherit;
+	--osim-tabs-tab-weight: inherit;
+	--osim-tabs-tab-active-weight: var(--osim-tabs-tab-weight, inherit);
+	--osim-tabs-content-bg: inherit;
+	--osim-tabs-content-color: inherit;
+
+	.osim-tabs-nav {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		position: relative;
+		gap: 0;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+
+		.osim-tab-item {
+			outline: 0;
+
+			.osim-tab-link {
+				font-size: 1rem;
+				line-height: 1.6;
+				font-weight: var(--osim-tabs-tab-weight, inherit);
+				padding: .375em 0.875em;
+				border: 1px solid var(--osim-tabs-border);
+				border-bottom-width: 0;
+				background-color: var(--osim-tabs-tab-bg, inherit);
+				color: var(--osim-tabs-tab-color, inherit);
+				transition: background-color .2s ease;
+				cursor: pointer;
+
+				&:not(.is-active):hover {
+					background-color: var(--osim-tabs-tab-bg-hover, var(--osim-tabs-tab-bg, inherit));
+				}
+
+				&.is-active {
+					background-color: var(--osim-tabs-tab-active-bg, var(--osim-tabs-tab-bg, inherit));
+					color: var(--osim-tabs-tab-active-color, var(--osim-tabs-tab-color, inherit));
+					font-weight: var(--osim-tabs-tab-active-weight, var(--osim-tabs-tab-weight, inherit));
+				}
+			}
+		}
+	}
+
+	.osim-tab-content {
+		background-color: var(--osim-tabs-content-bg, inherit);
+		color: var(--osim-tabs-content-color, inherit);
+		padding: 1.25rem 1rem 1.125rem;
+		margin: 0 0 2em;
+		border: 1px solid var(--osim-tabs-border);
+		border-radius: 0 0 4px 4px;
+
+		.osim-tab-panel {
+			display: none;
+			padding-top: 0.25rem;
+
+			&.is-active {
+				display: block;
+			}
+		}
+	}
+
+	@media screen and (min-width: 740px) {
+
+		.osim-tabs-nav {
+			flex-direction: row;
+
+			.osim-tab-item {
+				z-index: 1;
+
+				.osim-tab-link {
+					height: 100%;
+					//border-bottom-width: 1px;
+
+					&:not(.is-active):hover {
+						background-color: var(--osim-tabs-tab-bg-hover, var(--osim-tabs-tab-bg));
+					}
+
+					// maybe comment this out if using tabs background for active tabs
+					&.is-active {
+						border-bottom-color: var(--osim-tabs-tab-active-bg);
+					}
+				}
+
+				&:not(:last-child) .osim-tab-link {
+					border-right-width: 0;
+				}
+			}
+		}
+
+		.osim-tab-content {
+			padding: 1.5rem;
+			border-top-width: 1px;
+		}
+	}
+
+	@media screen and (min-width: 800px) {
+		.osim-tabs-nav {
+			padding: 0 1rem;
+
+			.osim-tab-item {
+				.osim-tab-link {
+					font-size: 1.125rem;
+				}
+			}
+		}
+	}
+}
