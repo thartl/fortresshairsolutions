@@ -1,0 +1,80 @@
+# Ignore everything #
+**
+!wp-content/
+wp-content/**
+!wp-content/themes/
+!wp-content/plugins/
+wp-content/themes/**
+wp-content/plugins/**
+
+# Add two rules for each Theme or Plugin you want to include:
+# 1. !folder-name/    <-- includes the Plugin and top level files
+# 2. !folder-name/**  <-- includes the Plugin and sub level files recursively, except for the "Ignore some other system generated files" rules below
+###############################
+
+# Start editing!
+
+# Theme
+!wp-content/themes/pwire-ollie-child/
+!wp-content/themes/pwire-ollie-child/**
+
+# Do not track generated / minified styles, scripts, or source maps - they are built on the server
+wp-content/themes/pwire-ollie-child/assets/css/**/*.css
+wp-content/themes/pwire-ollie-child/assets/css/**/*.map
+wp-content/themes/pwire-ollie-child/assets/styles/*.css
+wp-content/themes/pwire-ollie-child/assets/styles/*.map
+wp-content/themes/pwire-ollie-child/assets/js/dist/*.js
+
+# Core plugin
+!wp-content/plugins/core-functionality-fortresshairsolutions/
+!wp-content/plugins/core-functionality-fortresshairsolutions/**
+
+
+# Stop editing!
+
+############################################
+# Ignore some other system generated files #
+############################################
+node_modules
+package-lock.json
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.log
+*.sql
+*.sqlite
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.codekit-cache
+*config.codekit3
+.sass-cache
+# Sublime
+*.sublime-project
+*.sublime-workspace
+# PhpStorm
+.idea/
+.run/
+# VS Code
+.vscode/
+# VS Code and Cursor
+.code-workspace
+
+# Always include the build script #
+###################################
+!build.sh
+!README.md
+!CHANGELOG.md
