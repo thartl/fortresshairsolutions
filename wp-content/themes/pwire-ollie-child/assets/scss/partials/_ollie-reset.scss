@@ -89,7 +89,7 @@ textarea {
   appearance: none;
 }
 
-input:not([type="submit"]):not([type="radio"]),
+input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
 select,
 textarea,
 .wp-block-post-comments-form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
