@@ -150,28 +150,69 @@ document.addEventListener( 'DOMContentLoaded', () => {
 		content.addEventListener( 'transitionend', onTransitionEnd );
 	};
 
-	document.querySelectorAll( `${ selector } .faq-heading` ).forEach( ( header ) => {
-		const item = header.closest( selector );
-		const content = item?.querySelector( '.faq-content' );
-
-		if ( ! item || ! content ) {
+	const setCollapsedState = ( item, isCollapsed ) => {
+		if ( !item ) {
 			return;
 		}
 
+		item.classList.toggle( 'collapsed', isCollapsed );
+		item.dataset.collapsed = isCollapsed ? 'true' : 'false';
+	};
+
+	document.querySelectorAll( '.wp-block-osim-faqs' ).forEach( ( faqsBlock ) => {
+		faqsBlock.dataset.collapsible = faqsBlock.classList.contains( 'collapsible' ) ? 'true' : 'false';
+		faqsBlock.dataset.accordionMode = faqsBlock.classList.contains( 'accordion-mode' ) ? 'true' : 'false';
+		faqsBlock.dataset.iconStyle = faqsBlock.classList.contains( 'icon-chevron' ) ? 'chevron' : 'triangle';
+		faqsBlock.dataset.iconPosition = faqsBlock.classList.contains( 'icon-right' ) ? 'right' : 'left';
+	} );
+
+	document.querySelectorAll( `${ selector } .faq-heading` ).forEach( ( header ) => {
+		const item = header.closest( selector );
+		const content = item?.querySelector( '.faq-content' );
+		const faqsBlock = item?.closest( '.wp-block-osim-faqs.collapsible' );
+
+		if ( ! item || ! content || !faqsBlock ) {
+			return;
+		}
+
+		const collapseItem = ( nextItem ) => {
+			if ( !nextItem ) {
+				return;
+			}
+
+			const nextContent = nextItem.querySelector( '.faq-content' );
+			if ( !nextContent ) {
+				return;
+			}
+
+			setCollapsedState( nextItem, true );
+			animateCollapse( nextContent );
+		};
+
 		// Ensure initial state aligns with the marker class.
 		if ( item.classList.contains( 'collapsed' ) ) {
+			setCollapsedState( item, true );
 			content.style.display = 'none';
+		} else {
+			setCollapsedState( item, false );
 		}
 
 		header.addEventListener( 'click', () => {
 			const isCollapsed = item.classList.contains( 'collapsed' );
 
 			if ( isCollapsed ) {
-				item.classList.remove( 'collapsed' );
+				if ( faqsBlock.classList.contains( 'accordion-mode' ) ) {
+					faqsBlock.querySelectorAll( '.wp-block-osim-faq' ).forEach( ( sibling ) => {
+						if ( sibling !== item && !sibling.classList.contains( 'collapsed' ) ) {
+							collapseItem( sibling );
+						}
+					} );
+				}
+
+				setCollapsedState( item, false );
 				animateExpand( content );
 			} else {
-				item.classList.add( 'collapsed' );
-				animateCollapse( content );
+				collapseItem( item );
 			}
 		} );
 	} );

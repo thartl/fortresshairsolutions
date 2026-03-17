@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "osim/faqs",
-	"version": "1.0.6",
+	"version": "1.0.8",
 	"title": "FAQs",
 	"category": "design",
 	"icon": "editor-help",
@@ -10,12 +10,51 @@
 	"example": {},
 	"supports": {
 		"html": false,
-		"align": [ "wide", "full" ]
+		"align": [ "wide", "full" ],
+		"layout": {
+			"allowSwitching": false,
+			"allowInheriting": false,
+			"allowEditing": false,
+			"default": {
+				"type": "flow"
+			}
+		},
+		"spacing": {
+			"blockGap": [ "vertical" ],
+			"margin": true,
+			"padding": true,
+			"__experimentalDefaultControls": {
+				"blockGap": true,
+				"margin": true,
+				"padding": true
+			}
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontWeight": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true,
+				"lineHeight": true
+			}
+		}
 	},
-	"allowedBlocks": [ "osim/faq" ],
+	"allowedBlocks": [ "osim/faq", "core/separator" ],
 	"textdomain": "osim-blocks",
 	"attributes": {
 		"makeCollapsible": {
+			"type": "boolean",
+			"default": false
+		},
+		"iconStyle": {
+			"type": "string",
+			"default": "triangle"
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "left"
+		},
+		"accordionMode": {
 			"type": "boolean",
 			"default": false
 		},
@@ -30,6 +69,19 @@
 		},
 		"contentBackgroundColor": {
 			"type": "string"
+		},
+		"headingFontSize": {
+			"type": "string"
+		},
+		"headingFontWeight": {
+			"type": "string"
+		},
+		"headingLineHeight": {
+			"type": "string"
+		},
+		"itemBorderRadius": {
+			"type": "number",
+			"default": 6
 		}
 	},
 	"editorScript": "file:./index.js",

@@ -12,3 +12,11 @@
 		}
 	}
 }
+
+.editor-styles-wrapper .wp-block-osim-faqs.collapsible .wp-block-osim-faq .faq-heading {
+	cursor: text;
+}
+
+.editor-styles-wrapper .wp-block-osim-faqs.collapsible .wp-block-osim-faq .faq-heading::after {
+	cursor: pointer;
+}

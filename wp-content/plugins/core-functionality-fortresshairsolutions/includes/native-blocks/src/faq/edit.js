@@ -1,9 +1,13 @@
 import {useBlockProps, InnerBlocks} from '@wordpress/block-editor';
 import './editor.scss';
 
-export default function Edit() {
+export default function Edit( {attributes} ) {
 
-	const blockProps = useBlockProps();
+	const isCollapsed = attributes?.isCollapsed !== false;
+
+	const blockProps = useBlockProps( {
+		className: isCollapsed ? 'collapsed' : undefined,
+	} );
 
 	const BLOCKS_TEMPLATE = [
 		['core/heading', { level: 2, className: 'faq-heading', placeholder: 'Enter question...', lock: { remove: true, move: true } }],
