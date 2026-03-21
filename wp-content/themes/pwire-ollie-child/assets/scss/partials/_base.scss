@@ -38,6 +38,10 @@ button {
 
 a {
   transition: color var(--hover-transition-duration, .2s) var(--hover-transition-timing, ease);
+
+  .a-no-underline & {
+    text-decoration: none;
+  }
 }
 
 
