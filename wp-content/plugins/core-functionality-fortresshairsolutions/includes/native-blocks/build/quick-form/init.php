@@ -550,6 +550,7 @@ function handle_rest_submit( WP_REST_Request $request ) {
 		'success' => $result['success'],
 		'message' => $result['message'],
 		'errors'  => $result['errors'],
+		'is_spam' => $result['is_spam'],
 	] );
 
 	$response->set_status( $status );
@@ -889,6 +890,7 @@ function process_submission( array $raw ): array {
 			'success' => true,
 			'message' => $confirmation_message,
 			'errors'  => [],
+			'is_spam' => true,
 		];
 	}
 
@@ -947,6 +949,7 @@ function process_submission( array $raw ): array {
 			'success' => true,
 			'message' => $confirmation_message,
 			'errors'  => [],
+			'is_spam' => true,
 		];
 	}
 
@@ -972,6 +975,7 @@ function process_submission( array $raw ): array {
 			'success' => true,
 			'message' => $confirmation_message,
 			'errors'  => [],
+			'is_spam' => true,
 		];
 	}
 
@@ -982,6 +986,7 @@ function process_submission( array $raw ): array {
 			'success' => false,
 			'message' => 'Please check the form and try again.',
 			'errors'  => $errors,
+			'is_spam' => false,
 		];
 	}
 
@@ -1008,6 +1013,7 @@ function process_submission( array $raw ): array {
 			'success' => false,
 			'message' => 'Submission saved, but email could not be sent. Please try again later.',
 			'errors'  => [ 'form' => 'Submission saved, but email could not be sent. Please try again later.' ],
+			'is_spam' => false,
 		];
 	}
 
@@ -1015,6 +1021,7 @@ function process_submission( array $raw ): array {
 		'success' => true,
 		'message' => $confirmation_message,
 		'errors'  => [],
+		'is_spam' => false,
 	];
 }
 

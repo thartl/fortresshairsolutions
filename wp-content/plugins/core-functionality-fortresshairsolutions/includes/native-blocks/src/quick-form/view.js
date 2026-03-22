@@ -182,9 +182,13 @@
 		}
 
 		window.dataLayer.push( {
-			event: 'pwire_quick_form_submit_success',
+			event: 'quick_form_submit_success',
 			form_id: form.getAttribute( 'id' ) || '',
 		} );
+	};
+
+	const trackZarazLeadSubmit = async () => {
+		await window.zaraz?.track( 'quick_form_submit_success' );
 	};
 
 	const submitViaRest = async ( form, restUrl ) => {
@@ -210,7 +214,11 @@
 		// If we got a structured JSON response, handle it even on HTTP 400.
 		if ( json && typeof json === 'object' ) {
 			if ( json.success === true ) {
-				return {ok: true, message: json.message || ''};
+				return {
+					ok: true,
+					message: json.message || '',
+					isSpam: json.is_spam === true,
+				};
 			}
 
 			if ( json.success === false ) {
@@ -320,7 +328,10 @@
 					setHidden( errorsEl, true );
 					form.setAttribute( 'hidden', '' );
 
-					pushGtmSuccess( form );
+					if ( result.isSpam !== true ) {
+						// pushGtmSuccess( form );
+						await trackZarazLeadSubmit();
+					}
 
 					return;
 				}
