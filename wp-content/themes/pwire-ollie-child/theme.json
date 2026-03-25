@@ -11,9 +11,20 @@
 		"elements": {
 			"button": {
 				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--primary-alt)",
+						"text": "var(--wp--preset--color--primary-alt-accent)"
+					},
 					"typography": {
 						"textDecoration": "none"
 					}
+				},
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--primary-alt-accent)"
+				},
+				"typography": {
+					"fontWeight": "600"
 				}
 			}
 		},
