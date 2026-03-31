@@ -12,7 +12,7 @@
 			"button": {
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--primary-alt)",
+						"background": "var(--wp--preset--color--main-accent)",
 						"text": "var(--wp--preset--color--primary-alt-accent)"
 					},
 					"typography": {
