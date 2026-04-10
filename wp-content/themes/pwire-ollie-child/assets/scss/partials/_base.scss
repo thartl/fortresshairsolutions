@@ -50,8 +50,13 @@ a {
 .site-header {
   .wp-block-site-logo {
     img {
-      width: clamp(8rem, 15vw, 12rem);
+      width: clamp(3rem, 10vw, 5rem);
     }
+  }
+  p.wp-block-site-title {
+    font-size: clamp(0.875rem, 3.8vw, 1.125rem);
+    font-weight: 500;
+    margin-top: 0.375em;
   }
 }
 
