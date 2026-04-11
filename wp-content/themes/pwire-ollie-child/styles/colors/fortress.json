@@ -1,0 +1,76 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "ForTRESS",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#e6b6b6",
+					"name": "Brand",
+					"slug": "primary"
+				},
+				{
+					"color": "#f6f0f0",
+					"name": "Brand Accent",
+					"slug": "primary-accent"
+				},
+				{
+					"color": "#e99696",
+					"name": "Brand Alt",
+					"slug": "primary-alt"
+				},
+				{
+					"color": "#452121",
+					"name": "Brand Alt Accent",
+					"slug": "primary-alt-accent"
+				},
+				{
+					"color": "#231515",
+					"name": "Contrast",
+					"slug": "main"
+				},
+				{
+					"color": "#dec9c9",
+					"name": "Contrast Accent",
+					"slug": "main-accent"
+				},
+				{
+					"color": "#ffffff",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#6d3b3b",
+					"name": "Base Accent",
+					"slug": "secondary"
+				},
+				{
+					"color": "#f8f7f7",
+					"name": "Tint",
+					"slug": "tertiary"
+				},
+				{
+					"color": "#e3d9d9",
+					"name": "Border Base",
+					"slug": "border-light"
+				},
+				{
+					"color": "#663d3d",
+					"name": "Border Contrast",
+					"slug": "border-dark"
+				},
+				{
+					"color": "#5a9367",
+					"name": "Go",
+					"slug": "custom-go"
+				},
+				{
+					"color": "#c15a67",
+					"name": "Stop",
+					"slug": "custom-stop"
+				}
+			]
+		}
+	}
+}
