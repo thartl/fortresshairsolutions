@@ -613,12 +613,6 @@
 					"fontFamily": "var(--wp--preset--font-family--nunito-sans)"
 				}
 			},
-			"h2": {
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--lato)",
-					"fontSize": "var(--wp--preset--font-size--large)"
-				}
-			},
 			"heading": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--nunito-sans)",
