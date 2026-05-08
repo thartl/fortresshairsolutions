@@ -1,0 +1,37 @@
+/** These styles are not included in the built CSS file.
+ *  This is a backup of Simply Schedule Appointments > Settings > Styles > Custom CSS.
+*/
+.booking-header .timezone {display:none}
+
+.time-select .time-listing li {text-align:left}
+
+.book-day button.md-whiteframe.disabled {
+  color: #827a7a;
+  background-color: #eceaea;
+}
+
+.book-day button.md-whiteframe:hover,
+.book-day button.md-whiteframe:active,
+.book-day button.md-whiteframe.selected {
+  color: #231515 !important;
+  background-color: #E6B6B6 !important;
+}
+
+html .book-day button.md-whiteframe.selectable:hover {
+  color: #231515 !important;
+}
+
+/* Hide Reschedule button on the customer edit appointment page */
+body:not(.logged-in) .cust-info .edit-appt .cancellation-actions .appointment-actions .appointment-reschedule-button {
+  display: none;
+}
+
+/* Hide Reschedule button on the cancel/reschedule screen */
+body:not(.logged-in) .change.cust-info .cancellation-actions .appointment-reschedule-button {
+  display: none;
+}
+
+/* Hide Reschedule button on the immediate confirmation screen */
+.confirm.cust-info .appointment-reschedule-button {
+  display: none;
+}
