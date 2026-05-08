@@ -23,6 +23,9 @@
 }
 #adminmenu .menu-icon-pwire_qform_entry a,
 #adminmenu .menu-icon-pwire_qform_entry .wp-submenu li.current a,
-#adminmenu .menu-icon-pwire_qform_entry a .wp-menu-image:before {
+#adminmenu .menu-icon-pwire_qform_entry a .wp-menu-image:before,
+#adminmenu .toplevel_page_simply-schedule-appointments a,
+#adminmenu .toplevel_page_simply-schedule-appointments .wp-submenu li.current a,
+#adminmenu .toplevel_page_simply-schedule-appointments a .wp-menu-image:before {
 	color: #53dd53;
 }
