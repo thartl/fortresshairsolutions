@@ -61,8 +61,9 @@ add_action( 'wp_head', __NAMESPACE__ . '\preload_theme_fonts', 0 );
  */
 function preload_theme_fonts(): void {
 	$fonts = [
-		'assets/fonts/open-sans-normal-latin.woff2',
-		'assets/fonts/playfair-display-normal-latin.woff2',
+		'assets/fonts/nunito-sans/nunito-sans-normal.woff2',
+		'assets/fonts/nunito-sans/nunito-sans-italic.woff2',
+		'assets/fonts/tenor-sans/tenor-sans-normal.woff2',
 	];
 
 	foreach ( $fonts as $rel ) {
