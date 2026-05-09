@@ -49,54 +49,53 @@ function get_asset_version( string $rel_path ): string {
 }
 
 
-// todo: adjust overrides in the fallback stylesheet based on final fonts used, then hook up fallback fonts in theme.json
-//add_action( 'wp_head', __NAMESPACE__ . '\preload_theme_fonts', 0 );
-///**
-// * Preload theme fonts for faster rendering.
-// *
-// * Notes:
-// * 1) Preload only what matters most / is visible above fold, i.e., likely upright faces, not italic or bold.
-// * 2) Keep these font paths matched to the font sources defined in theme.json.
-// *
-// * @return void
-// */
-//function preload_theme_fonts(): void {
-//	$fonts = [
-//		'assets/fonts/open-sans-normal-latin.woff2',
-//		'assets/fonts/playfair-display-normal-latin.woff2',
-//	];
-//
-//	foreach ( $fonts as $rel ) {
-//		$href = esc_url( get_theme_file_uri( $rel ) );
-//		echo '<link rel="preload" href="' . $href . '" as="font" type="font/woff2" crossorigin="anonymous">' . "\n";
-//	}
-//}
+add_action( 'wp_head', __NAMESPACE__ . '\preload_theme_fonts', 0 );
+/**
+ * Preload theme fonts for faster rendering.
+ *
+ * Notes:
+ * 1) Preload only what matters most / is visible above fold, i.e., likely upright faces, not italic or bold.
+ * 2) Keep these font paths matched to the font sources defined in theme.json.
+ *
+ * @return void
+ */
+function preload_theme_fonts(): void {
+	$fonts = [
+		'assets/fonts/open-sans-normal-latin.woff2',
+		'assets/fonts/playfair-display-normal-latin.woff2',
+	];
 
-// todo: adjust overrides in the fallback stylesheet based on final fonts used, then hook up fallback fonts in theme.json
-//add_action( 'wp_head', __NAMESPACE__ . '\font_fallbacks_inline', 1 );
-///**
-// * Fallback font styles for Mona Sans.
-// *
-// * @return void
-// */
-//function font_fallbacks_inline(): void {
-//
-//	$file = get_stylesheet_directory() . '/assets/css/font-fallbacks.css';
-//
-//	if ( ! file_exists( $file ) ) {
-//		return;
-//	}
-//
-//	$css = file_get_contents( $file );
-//
-//	if ( ! $css ) {
-//		return;
-//	}
-//
-//	echo "<style id=\"pwire-font-fallbacks\">\n";
-//	echo $css;
-//	echo "\n</style>\n";
-//}
+	foreach ( $fonts as $rel ) {
+		$href = esc_url( get_theme_file_uri( $rel ) );
+		echo '<link rel="preload" href="' . $href . '" as="font" type="font/woff2" crossorigin="anonymous">' . "\n";
+	}
+}
+
+
+add_action( 'wp_head', __NAMESPACE__ . '\font_fallbacks_inline', 1 );
+/**
+ * Fallback font styles for Mona Sans.
+ *
+ * @return void
+ */
+function font_fallbacks_inline(): void {
+
+	$file = get_stylesheet_directory() . '/assets/css/font-fallbacks.css';
+
+	if ( ! file_exists( $file ) ) {
+		return;
+	}
+
+	$css = file_get_contents( $file );
+
+	if ( ! $css ) {
+		return;
+	}
+
+	echo "<style id=\"pwire-font-fallbacks\">\n";
+	echo $css;
+	echo "\n</style>\n";
+}
 
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\dequeue_parent_styles', 20 );

@@ -98,7 +98,7 @@
 							]
 						}
 					],
-					"fontFamily": "\"Nunito Sans\", sans-serif",
+					"fontFamily": "\"Nunito Sans\", \"Nunito Sans Fallback\", Arial, sans-serif",
 					"name": "Nunito Sans",
 					"slug": "nunito-sans"
 				},
@@ -114,7 +114,7 @@
 							]
 						}
 					],
-					"fontFamily": "\"Tenor Sans\", sans-serif",
+					"fontFamily": "\"Tenor Sans\", \"Tenor Sans Fallback\", Arial, sans-serif",
 					"name": "Tenor Sans",
 					"slug": "tenor-sans"
 				}
