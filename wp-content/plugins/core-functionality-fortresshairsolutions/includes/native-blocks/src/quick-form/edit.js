@@ -758,7 +758,7 @@ export default function Edit( props ) {
 					} )}
 
 					<div className="pwire-quick-form__actions">
-						<button type="button" className="pwire-quick-form__button wp-element-button" disabled>
+						<button type="button" className="pwire-quick-form__button wp-element-button">
 							{submitLabel || __( 'Send', 'pwire' )}
 						</button>
 					</div>
