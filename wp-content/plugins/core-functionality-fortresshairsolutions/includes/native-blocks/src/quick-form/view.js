@@ -176,19 +176,24 @@
 		return errors;
 	};
 
-	const pushGtmSuccess = ( form ) => {
-		if ( !window.dataLayer || !Array.isArray( window.dataLayer ) ) {
-			return;
+	const trackZarazLeadSubmit = async ( form ) => {
+		try {
+			const track = window.zaraz?.track;
+			if ( typeof track !== 'function' ) {
+				return;
+			}
+
+			const blockUidEl = form.querySelector( 'input[name="pwire_block_uid"]' );
+			const blockUid = blockUidEl ? ( blockUidEl.value || '' ).trim() : '';
+
+			await track.call( window.zaraz, 'quick_form_submit_success', {
+				form_type: 'quick_form',
+				form_id: blockUid || form.getAttribute( 'id' ) || '',
+			} );
 		}
-
-		window.dataLayer.push( {
-			event: 'quick_form_submit_success',
-			form_id: form.getAttribute( 'id' ) || '',
-		} );
-	};
-
-	const trackZarazLeadSubmit = async () => {
-		await window.zaraz?.track( 'quick_form_submit_success' );
+		catch ( err ) {
+			// Analytics failures must never retry an accepted form submission.
+		}
 	};
 
 	const submitViaRest = async ( form, restUrl ) => {
@@ -317,7 +322,16 @@
 			e.preventDefault();
 
 			try {
-				const result = await submitViaRest( form, restUrl );
+				let result;
+
+				try {
+					result = await submitViaRest( form, restUrl );
+				}
+				catch ( err ) {
+					form.removeEventListener( 'submit', handleSubmit );
+					form.submit();
+					return;
+				}
 
 				if ( result.ok ) {
 					if ( statusEl ) {
@@ -329,8 +343,7 @@
 					form.setAttribute( 'hidden', '' );
 
 					if ( result.isSpam !== true ) {
-						// pushGtmSuccess( form );
-						await trackZarazLeadSubmit();
+						await trackZarazLeadSubmit( form );
 					}
 
 					return;
@@ -342,10 +355,6 @@
 					form.removeEventListener( 'submit', handleSubmit );
 					form.submit();
 				}
-			}
-			catch ( err ) {
-				form.removeEventListener( 'submit', handleSubmit );
-				form.submit();
 			}
 			finally {
 				setSubmittingUi( form, false );
